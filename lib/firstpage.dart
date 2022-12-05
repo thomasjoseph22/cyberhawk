@@ -16,7 +16,7 @@ class _FirstpageState extends State<Firstpage> {
         child: Column(
           children: [
             SizedBox(
-              height: 600,
+              height: 800,
               child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
