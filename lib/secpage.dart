@@ -48,7 +48,7 @@ class _SecpageState extends State<Secpage> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
-                height: 200,
+                height: 100,
                 width: 400,
                 decoration: BoxDecoration(
                   border: Border.all(
@@ -64,37 +64,44 @@ class _SecpageState extends State<Secpage> {
                     ),
                   ],
                 ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                child: Column(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        'Aware of species',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'IBM',
-                            fontSize: 20),
-                      ),
-                    ),
                     Padding(
-                      padding: const EdgeInsets.all(50.0),
-                      child: SizedBox(
-                        child: ToggleSwitch(
-                          customWidths: const [90.0, 50.0],
-                          cornerRadius: 20.0,
-                          activeBgColors: const [
-                            [Color.fromARGB(255, 47, 161, 19)],
-                          ],
-                          activeFgColor: Colors.white,
-                          inactiveBgColor: Colors.grey,
-                          inactiveFgColor: Colors.white,
-                          totalSwitches: 1,
-                          labels: const [
-                            'YES',
-                          ],
-                        ),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              'Aware of species',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'IBM',
+                                  fontSize: 15),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 7),
+                            child: SizedBox(
+                              child: ToggleSwitch(
+                                customWidths: const [80.0, 50.0],
+                                cornerRadius: 20.0,
+                                activeBgColors: const [
+                                  [Color.fromARGB(255, 47, 161, 19)],
+                                ],
+                                activeFgColor: Colors.white,
+                                inactiveBgColor: Colors.grey,
+                                inactiveFgColor: Colors.white,
+                                totalSwitches: 1,
+                                labels: const [
+                                  'YES',
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
