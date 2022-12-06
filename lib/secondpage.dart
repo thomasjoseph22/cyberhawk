@@ -1,5 +1,6 @@
 // ignore: implementation_imports
 import 'package:cyberhawk/demo.dart';
+import 'package:cyberhawk/reportcrime.dart';
 import 'package:flutter/material.dart';
 // ignore: implementation_imports
 
@@ -51,10 +52,8 @@ class _LoginpageState extends State<Loginpage> {
                 minWidth: 360,
                 height: 50,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DemoPage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Report()));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,6 +124,46 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: MaterialButton(
+                  color: const Color.fromARGB(255, 17, 17, 21),
+                  height: 50,
+                  //  height: 50,
+                  onPressed: () {
+                    // Fluttertoast.showToast(
+                    //     msg: "This is Center Short Toast",
+                    //     backgroundColor: Colors.red,
+                    //     textColor: Colors.white,
+                    //     fontSize: 16.0);
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const DemoPage()),
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.only(right: 190),
+                        child: Text(
+                          'Recent Reports',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'IBM',
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward,
+                        color: Color.fromARGB(255, 252, 249, 249),
+                        size: 20,
+                      ),
+                    ],
+                  )),
             ),
             SizedBox(
               height: 600,

@@ -71,7 +71,11 @@ class _HomePageState extends State<HomePage> {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   // labelText: 'username',
-                  prefixIcon: Icon(Icons.person),
+
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -82,7 +86,10 @@ class _HomePageState extends State<HomePage> {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   // labelText: 'Password',
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -90,6 +97,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(left: 8),
               child: Text(
                 "Forgot Password?",
+                style: TextStyle(color: Colors.white),
               ),
             ),
             const SizedBox(
