@@ -66,6 +66,8 @@ flutter:
     - assets/rb.png
     - assets/da.png
     - assets/par.jpg
+    - assets/browser.png
+    - assets/map.png
     
 
   #   - images/a_dot_ham.jpeg

@@ -10,8 +10,15 @@ class Report extends StatefulWidget {
 class _ReportState extends State<Report> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 17, 17, 21),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 17, 17, 21),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text('Report'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+      ),
     );
   }
 }
