@@ -16,8 +16,29 @@ class _ReportState extends State<Report> {
         backgroundColor: Colors.black,
         title: const Text('Report'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(100.0),
+              child: Row(
+                children: [
+                  Container(
+                    height: 800,
+                    child: IconButton(
+                      icon: Image.asset('assets/browser.png'),
+                      iconSize: 100,
+                      alignment: Alignment.centerLeft,
+                      onPressed: () {},
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -47,6 +47,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   fluttertoast: 
   toggle_switch: ^2.0.1
+  flutter_bloc: ^8.1.1
    
 
 # For information on the generic Dart part of this file, see the
