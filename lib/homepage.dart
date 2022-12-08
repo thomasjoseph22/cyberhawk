@@ -1,6 +1,8 @@
+import 'package:cyberhawk/bloc/loginbloc.dart';
 import 'package:cyberhawk/secondpage.dart';
 import 'package:flutter/material.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final username = TextEditingController();
+  final password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,10 +69,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(7),
+            Padding(
+              padding: const EdgeInsets.all(7),
               child: TextField(
-                decoration: InputDecoration(
+                controller: username,
+                style: const TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   // labelText: 'username',
 
@@ -81,9 +87,11 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               padding: const EdgeInsets.all(7),
-              child: const TextField(
+              child: TextField(
+                controller: password,
+                style: const TextStyle(color: Colors.white),
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   // labelText: 'Password',
                   prefixIcon: Icon(
@@ -111,21 +119,46 @@ class _HomePageState extends State<HomePage> {
                   height: 50,
                   //  height: 50,
                   onPressed: () {
-                    // Fluttertoast.showToast(
-                    //     msg: "This is Center Short Toast",
-                    //     backgroundColor: Colors.red,
-                    //     textColor: Colors.white,
-                    //     fontSize: 16.0);
+                    BlocProvider.of<LoginBloc>(context).add(GetLoginEvent(
+                        password: password.text.toString(),
+                        username: username.text.toString()));
 
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Loginpage()),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) => const Loginpage()),
+                    // );
                   },
-                  child: const Text(
-                    'Login',
-                  )),
+                  child: BlocConsumer<LoginBloc, LoginState>(
+                    builder: (context, state) {
+                      if (state is Loading) {
+                        return const CircularProgressIndicator();
+                      } else {
+                        return const Text(
+                          'Login',
+                        );
+                      }
+                    },
+                    listener: (context, state) {
+                      if (state is LoginSuccess) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => const Loginpage())));
+                      } else if (state is LoginError) {
+                        Fluttertoast.showToast(
+                            msg: "invalid password",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.CENTER);
+                      }
+                    },
+                  )
+
+                  // child: const Text(
+                  //   'Login',
+                  // )
+
+                  ),
             )
           ],
         ),

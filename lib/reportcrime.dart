@@ -1,3 +1,4 @@
+import 'package:cyberhawk/onlinepage.dart';
 import 'package:flutter/material.dart';
 
 class Report extends StatefulWidget {
@@ -17,24 +18,32 @@ class _ReportState extends State<Report> {
         title: const Text('Report'),
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(100.0),
-              child: Row(
-                children: [
-                  Container(
-                    height: 800,
-                    child: IconButton(
-                      icon: Image.asset('assets/browser.png'),
-                      iconSize: 100,
-                      alignment: Alignment.centerLeft,
-                      onPressed: () {},
+            InkWell(
+              
+              onTap: (() {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Onlinep()));
+              }),
+              child: Container(
+                padding: const EdgeInsets.all(25),
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.white)),
+                child: Column(
+                  children: [
+                    Image.asset('assets/browser.png'),
+                    const SizedBox(
+                      height: 15,
                     ),
-                  )
-                ],
+                    const Text(
+                      'Online Reporting',
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                ),
               ),
             ),
           ],
