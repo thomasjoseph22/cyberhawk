@@ -1,3 +1,4 @@
+import 'package:cyberhawk/Splash.dart';
 import 'package:cyberhawk/bloc/loginbloc.dart';
 import 'package:cyberhawk/homepage.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(primarySwatch: Colors.red),
-        home: const HomePage(),
+        home: const Splashp(),
         // const MyHomePage(title: 'Flutter Cyberhawk'),
       ),
     );
