@@ -17,9 +17,21 @@ class _OnlinepState extends State<Onlinep> {
         title: const Text('Online Reporting'),
       ),
       body: Column(
-        children: [Row(
-          
-        )],
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                
+                'Illegal Wildlife Product Trade',
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
