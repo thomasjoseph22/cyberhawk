@@ -1,10 +1,7 @@
 import 'dart:async';
 
-import 'package:cyberhawk/firstpage.dart';
 import 'package:cyberhawk/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Splashp extends StatefulWidget {
   const Splashp({super.key});
@@ -32,7 +29,7 @@ class _SplashpState extends State<Splashp> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Image.asset("assets/report.png")),
-          Text('cyberhawk'),
+          const Text('cyberhawk'),
         ],
       ),
     );

@@ -17,37 +17,57 @@ class _ReportState extends State<Report> {
         backgroundColor: Colors.black,
         title: const Text('Report'),
       ),
-      body: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            InkWell(
-              
-              onTap: (() {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Onlinep()));
-              }),
-              child: Container(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: (() {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Onlinep()));
+                }),
+                child: Container(
+                  padding: const EdgeInsets.all(25),
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.white)),
+                  child: Column(
+                    children: [
+                      Image.asset('assets/browser.png'),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Text(
+                        'Online Reporting',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Container(
                 padding: const EdgeInsets.all(25),
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.white)),
                 child: Column(
                   children: [
-                    Image.asset('assets/browser.png'),
+                    Image.asset('assets/map.png'),
                     const SizedBox(
                       height: 15,
                     ),
                     const Text(
-                      'Online Reporting',
+                      'Field Reporting',
                       style: TextStyle(color: Colors.white),
                     )
                   ],
                 ),
-              ),
-            ),
-          ],
-        ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(GroceryBannerInitial()) {
@@ -11,7 +10,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       GetLoginEvent event, Emitter<LoginState> emit) async {
     emit(Loading());
 
-    if (event.password == "123" && event.username == "kevin") {
+    if (event.password == "123" && event.username == "Thomas") {
       emit(LoginSuccess());
     } else {
       emit(LoginError());
