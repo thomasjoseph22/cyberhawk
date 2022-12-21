@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:cyberhawk/model/signupmodel.dart';
+import 'package:cyberhawk/repositeries/repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
@@ -9,6 +11,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Future<FutureOr<void>> _getLoginEvent(
       GetLoginEvent event, Emitter<LoginState> emit) async {
     emit(Loading());
+
+    SignupModel signupModel;
+
+    Map map = {};
+    signupModel = (await Repository()
+        .checkPhoneNumber(url: '/user/login/password', data: map));
 
     if (event.password == "123" && event.username == "Thomas") {
       emit(LoginSuccess());

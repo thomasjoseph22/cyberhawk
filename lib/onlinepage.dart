@@ -25,9 +25,12 @@ class _OnlinepState extends State<Onlinep> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               Text(
-                
                 'Illegal Wildlife Product Trade',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'IBM',
+                  fontSize: 20,
+                ),
               ),
             ],
           )
